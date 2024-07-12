@@ -1,0 +1,66 @@
+<form nz-form [formGroup]="filterForm" (ngSubmit)="onSubmit()">
+  <nz-row [nzGutter]="16">
+    <nz-col [nzSpan]="24">
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" nzFor="location">Location</nz-form-label>
+        <nz-form-control [nzSm]="14">
+          <input nz-input formControlName="location" id="location" />
+        </nz-form-control>
+      </nz-form-item>
+    </nz-col>
+  </nz-row>
+
+  <nz-row [nzGutter]="16">
+    <nz-col [nzSpan]="12">
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" nzFor="startDate">Start Date</nz-form-label>
+        <nz-form-control [nzSm]="14">
+          <nz-date-picker formControlName="startDate" nzFormat="MM/dd/yyyy" id="startDate" (ngModelChange)="onStartDateChange($event)" [nzDisabledDate]="disabledStartDate"></nz-date-picker>
+        </nz-form-control>
+      </nz-form-item>
+    </nz-col>
+    <nz-col [nzSpan]="12">
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" nzFor="endDate">End Date</nz-form-label>
+        <nz-form-control [nzSm]="14">
+          <nz-date-picker formControlName="endDate" nzFormat="MM/dd/yyyy" id="endDate" (ngModelChange)="onEndDateChange($event)" [nzDisabledDate]="disabledEndDate"></nz-date-picker>
+        </nz-form-control>
+      </nz-form-item>
+    </nz-col>
+  </nz-row>
+
+  <nz-row [nzGutter]="16">
+    <nz-col [nzSpan]="12">
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" nzFor="sortBy">Sort By</nz-form-label>
+        <nz-form-control [nzSm]="14">
+          <nz-select formControlName="sortBy">
+            <nz-option nzValue="date" nzLabel="Date"></nz-option>
+            <nz-option nzValue="name" nzLabel="Name"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+    </nz-col>
+    <nz-col [nzSpan]="12">
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" nzFor="direction">Direction</nz-form-label>
+        <nz-form-control [nzSm]="14">
+          <nz-select formControlName="direction">
+            <nz-option nzValue="asc" nzLabel="Ascending"></nz-option>
+            <nz-option nzValue="desc" nzLabel="Descending"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+    </nz-col>
+  </nz-row>
+
+  <nz-row>
+    <nz-col [nzSpan]="24">
+      <nz-form-item>
+        <nz-form-control [nzSm]="14" [nzOffset]="6">
+          <button nz-button [nzLoading]="loading" nzType="primary">Search</button>
+        </nz-form-control>
+      </nz-form-item>
+    </nz-col>
+  </nz-row>
+</form>

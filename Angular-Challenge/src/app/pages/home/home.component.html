@@ -1,0 +1,4 @@
+<div class="home">
+  <app-event-filter [loading]="loading" (filterChanged)="onFilterChanged($event)"></app-event-filter>
+  <app-event-list [loading]="loading" [events]="events"></app-event-list>
+</div>

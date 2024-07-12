@@ -1,0 +1,42 @@
+@import 'antd/dist/reset.css';
+
+body {
+  font-family: 'Montserrat', 'Kumbh Sans', 'Roboto', 'Helvetica Neue',
+    sans-serif !important;
+}
+
+#root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+}
+
+:root {
+  --color-primary: #3bd4ae;
+  --color-disabled: #979797;
+  --color-background: #f0f0f0;
+  --text-color: #1f1646;
+}
+
+.main-ant-app {
+  height: 100dvh;
+  width: 100dvw;
+  overflow: auto;
+}
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--color-dark) !important;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}

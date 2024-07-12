@@ -1,0 +1,8 @@
+<nz-list [nzLoading]="loading" [nzDataSource]="events" [nzRenderItem]="item" [nzBordered]="false">
+  <ng-template #item let-event>
+    <nz-list-item>
+      <nz-list-item-meta [nzAvatar]="event.images[0]?.url" [nzTitle]="event.name" [nzDescription]="(event.dates.start.localDate | date:'MM/dd/YYYY') +' | '+ ( event | parseCity)"></nz-list-item-meta>
+      <img [src]="event.images[0]?.url" alt="{{event.name}}" width="100" />
+    </nz-list-item>
+  </ng-template>
+</nz-list>
